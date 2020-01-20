@@ -1,0 +1,23 @@
+@model Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div>
+    
+    <h1>This is Student Details page.</h1>
+    <div class="list-group" style="margin-bottom: 20px">
+        <div class="list-group-item">ID:       @Model.Id</div>
+        <div class="list-group-item">Name:     @Model.Name</div>
+        <div class="list-group-item">Batch:    @Model.Batch</div>
+        <div class="list-group-item">Dept:     @Model.Dept</div>
+        <div class="list-group-item">Email:    @Model.Email</div>
+    </div>
+    <div class="d-flex">
+        <a asp-controller="Home" asp-action="StudentUpdate" asp-route-id="@Model.Id" class="btn btn-primary">Update</a>
+        <a asp-controller="Home" asp-action="StudentDelete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+    </div>
+
+
+</div>

@@ -1,0 +1,23 @@
+@model List<Student>
+@{
+    ViewData["Title"] = "Students Page";
+}
+
+<div>
+    <div class="d-flex justify-content-center">
+        <div class="display-2">Student List</div>
+    </div>
+    <div class="container row">
+        @foreach (Student student in Model)
+        {
+            <div class="list-group" style="margin-bottom: 20px">
+                <div class="list-group-item">@student.Name</div>
+                <div class="list-group-item">@student.Batch</div>
+                <div class="list-group-item">@student.Dept</div>
+                <div class="list-group-item">@student.Email</div>
+                <a asp-controller="Home" asp-action="StudentDetails" asp-route-id="@student.Id" class="btn btn-primary">View</a>
+                
+            </div>
+        }
+    </div>
+</div>

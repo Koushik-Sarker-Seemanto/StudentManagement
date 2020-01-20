@@ -1,0 +1,40 @@
+@model Student
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+<div>
+    <h1 class="d-flex justify-content-center">This is Add Student page.</h1>
+
+    
+        <form asp-controller="Home" asp-action="AddStudent" method="post" style="background: #eeeeee;padding: 20px;border-radius: 5px">
+            <div class="form-group row"> 
+                <label asp-for="Name" class="col-sm-2 col-form-label"></label> 
+                <div class="col-sm-10"> 
+                    <input asp-for="Name" class="form-control" placeholder="Name"/> 
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div> 
+            </div>
+                
+            <div class="form-group row"> 
+                <label asp-for="Email" class="col-sm-2 col-form-label"></label> 
+                <div class="col-sm-10"> 
+                    <input asp-for="Email" class="form-control" placeholder="Email"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div> 
+            </div>
+            <div class="form-group row"> 
+                <label asp-for="Batch" class="col-sm-2 col-form-label"></label> 
+                <div class="col-sm-10"> 
+                    <input asp-for="Batch" class="form-control" placeholder="Batch"/> 
+                </div> 
+            </div>
+            <div class="form-group row"> 
+                <label asp-for="Dept" class="col-sm-2 col-form-label"></label> 
+                <div class="col-sm-10">
+                    <select asp-for="Dept" class="custom-select" asp-items="Html.GetEnumSelectList<Dept>()"></select>
+                </div> 
+            </div>
+            <button class="btn btn-primary" type="submit" style="color: #ffffff">Create</button>
+        </form>
+</div>
